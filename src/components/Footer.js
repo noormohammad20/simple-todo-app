@@ -10,7 +10,7 @@ const Footer = () => {
                 <li class="cursor-pointer">Incomplete</li>
                 <li>|</li>
                 <li class="cursor-pointer">Complete</li>
-                <li></li>
+                <li> </li>
                 <li></li>
                 <li
                     class="h-3 w-3 border-2 border-green-500 md:hover:bg-green-500 rounded-full cursor-pointer bg-green-500"
