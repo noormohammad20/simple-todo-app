@@ -8,7 +8,7 @@ export const added = (todoText) => {
 }
 export const toggled = (todoId) => {
     return {
-        type: toggled,
+        type: TOGGLED,
         payload: todoId
     }
 }

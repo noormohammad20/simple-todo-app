@@ -15,7 +15,6 @@ const reducer = (state = initialState, action) => {
                 }
             ]
         case TOGGLED:
-            const { completed } = action.payload
 
             return state.map(todo => {
                 if (todo.id !== action.payload) {
@@ -23,7 +22,7 @@ const reducer = (state = initialState, action) => {
                 }
                 return {
                     ...todo,
-                    completed: !completed
+                    completed: !todo.completed
                 }
             })
 
