@@ -1,4 +1,4 @@
-import { initialState } from "./initialState"
+import initialState from "./initialState"
 import { ADDED, DELETED, ALLCOMPLETED, CLEARCOMPLETED, COLORSELECTED, TOGGLED } from "./actionTypes"
 
 function nextTodoId(todos) {
