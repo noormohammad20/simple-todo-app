@@ -5,7 +5,7 @@ import { toggled, colorSelected, deleted } from '../redux/todos/actions'
 
 const Todo = ({ todo }) => {
     const dispatch = useDispatch()
-    const { id, text, completed, color } = todo
+    const { id, completed, color } = todo
 
 
     const handleStatusChange = (todoId) => {
@@ -40,7 +40,7 @@ const Todo = ({ todo }) => {
                 </svg>}
             </div>
 
-            <div class="select-none flex-1 line-through">
+            <div class={`select-none flex-1 ${completed && 'line-through'} `}>
                 {todo.text}
             </div>
 
