@@ -35,14 +35,14 @@ const Footer = () => {
 
 
     return (
-        <div class="mt-4 flex justify-between text-xs text-gray-500">
+        <div className="mt-4 flex justify-between text-xs text-gray-500">
             <p>{numberOfTodos(todosRemaining)} tasks left</p>
-            <ul class="flex space-x-1 items-center text-xs">
-                <li class={`cursor-pointer ${status === "All" && "font-bold"} `} onClick={() => handleStatusChange('All')}>All</li>
+            <ul className="flex space-x-1 items-center text-xs">
+                <li className={`cursor-pointer ${status === "All" && "font-bold"} `} onClick={() => handleStatusChange('All')}>All</li>
                 <li>|</li>
-                <li class={`cursor-pointer ${status === "Incomplete" && "font-bold"} `} onClick={() => handleStatusChange('Incomplete')}>Incomplete</li>
+                <li className={`cursor-pointer ${status === "Incomplete" && "font-bold"} `} onClick={() => handleStatusChange('Incomplete')}>Incomplete</li>
                 <li>|</li>
-                <li class={`cursor-pointer ${status === "Complete" && "font-bold"} `} onClick={() => handleStatusChange('Complete')}>Complete</li>
+                <li className={`cursor-pointer ${status === "Complete" && "font-bold"} `} onClick={() => handleStatusChange('Complete')}>Complete</li>
                 <li> </li>
                 <li></li>
                 <li
