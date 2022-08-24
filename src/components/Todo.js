@@ -1,8 +1,9 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
 import cancelImg from '../assets/images/cancel.png'
-import { toggled, colorSelected, deleted } from '../redux/todos/actions'
+import { colorSelected, deleted } from '../redux/todos/actions'
 import updateStatus from '../redux/todos/thunk/updateStatus'
+import updateColor from '../redux/todos/thunk/updateColor'
 
 const Todo = ({ todo }) => {
     const dispatch = useDispatch()
@@ -14,7 +15,7 @@ const Todo = ({ todo }) => {
     }
 
     const handleColorChange = (todoId, color) => {
-        dispatch(colorSelected(todoId, color))
+        dispatch(updateColor(todoId, color))
     }
 
     const handleDelete = (todoId) => {
@@ -33,12 +34,14 @@ const Todo = ({ todo }) => {
                     onChange={() => handleStatusChange(id)}
                     className="opacity-0 absolute rounded-full"
                 />
-                {completed && <svg
-                    className="fill-current w-3 h-3 text-green-500 pointer-events-none"
-                    viewBox="0 0 20 20"
-                >
-                    <path d="M0 11l2-2 5 5L18 3l2 2L7 18z" />
-                </svg>}
+                {completed && (
+                    <svg
+                        className="fill-current w-3 h-3 text-green-500 pointer-events-none"
+                        viewBox="0 0 20 20"
+                    >
+                        <path d="M0 11l2-2 5 5L18 3l2 2L7 18z" />
+                    </svg>
+                )}
             </div>
 
             <div className={`select-none flex-1 ${completed && 'line-through'} `}>
