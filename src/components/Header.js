@@ -2,8 +2,9 @@ import React, { useState } from 'react'
 import noteImg from '../assets/images/notes.png'
 import doubleTickImg from '../assets/images/double-tick.png'
 import plusImg from '../assets/images/plus.png'
-import { added, allCompleted, clearCompleted } from '../redux/todos/actions'
+import { allCompleted, clearCompleted } from '../redux/todos/actions'
 import { useDispatch } from 'react-redux'
+import addTodo from '../redux/todos/thunk/addTodo'
 
 const Header = () => {
     const [input, setInput] = useState('')
@@ -14,7 +15,7 @@ const Header = () => {
     }
     const submitHandler = (e) => {
         e.preventDefault()
-        dispatch(added(input))
+        dispatch(addTodo(input))
         setInput('')
     }
     const completeHandler = () => {
